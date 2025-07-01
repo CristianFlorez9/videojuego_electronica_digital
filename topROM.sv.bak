@@ -1,0 +1,48 @@
+module topROM (
+    input logic CLK,
+    input logic nRST,
+    output logic HS,
+    output logic VS,
+    output logic [11:0] RGB
+);
+
+    // Declaración de componentes
+    logic [11:0] rgb_aux;
+    logic [10:0] hcount;
+    logic [10:0] vcount;
+    logic RST, paintImg, blank;
+	 
+	 assign RST = ~nRST;
+
+    // Instancia del controlador VGA
+    vga_ctrl_640x480_60Hz ctrlVga (
+        .rst(RST),
+        .clk(CLK),
+        .rgb_in(rgb_aux),
+        .HS(HS),
+        .VS(VS),
+        .hcount(hcount),
+        .vcount(vcount),
+        .rgb_out(RGB),
+        .blank(blank)
+    );
+
+    // Instancia para dibujar una imagen que está almacenada en una ROM
+    image #(
+        .POSX(300),
+        .POSY(100)
+    ) drawIng (
+        .pix_x(hcount),
+        .pix_y(vcount),
+        .paint(paintImg)
+    );
+
+    // Multiplexor para seleccionar el color RGB
+    always_comb begin
+        if (paintImg)
+            rgb_aux = 12'b101101001010; // Color cuando se pinta la imagen
+        else
+            rgb_aux = 12'b001000100011; // Color de fondo
+    end
+
+endmodule

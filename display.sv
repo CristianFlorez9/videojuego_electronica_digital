@@ -10,7 +10,7 @@ module display #(
     input logic [3:0] VALUE,
     output logic PAINT
 );
-
+//a
 // Segmentos del display
 logic [7:0] segments;
 

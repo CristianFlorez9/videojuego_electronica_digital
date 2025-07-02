@@ -103,7 +103,7 @@ module vga_ctrl_640x480_60Hz (rst, clk,rgb_in,HS, VS, hcount,vcount,rgb_out,blan
 			  VS <= ~SPP;
 		 end
 	end
-	
+	//.	
 	// enable video output when pixel is in visible area
 	assign video_enable = (hcounter < HLINES && vcounter < VLINES) ? 1'b1 : 1'b0;
 	

@@ -6,7 +6,7 @@ module image #(
     input logic [10:0] pix_y,
     output logic paint
 );
-
+//.	
     // Declaración de señales internas
     logic [3:0] addRom_sig; //Row
     logic [31:0] dataRom_sig; //Col

@@ -75,7 +75,7 @@ module topROM #(FPGAFREQ = 50_000_000)(
         .pix_y(vcount),
         .paint(paintImg4)
     );
-
+//.	
     ///////// Lógica de color /////////
 	 
 	 //rgb aux es la señal que guarda el color que se muestra en la pantalla

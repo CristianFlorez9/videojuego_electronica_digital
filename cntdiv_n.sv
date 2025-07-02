@@ -18,5 +18,6 @@ module cntdiv_n #(TOPVALUE = 50_000_000) (clk, rst, clkout);
 				rCounter <= 0;
 			end	
 		end	
-	end		
+	end	
+	//.	
 endmodule

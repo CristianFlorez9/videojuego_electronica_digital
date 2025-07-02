@@ -56,7 +56,7 @@ always_comb begin
 		default: segments = 8'b00000000;
   endcase
 end
-
+//.	
 // Lógica de activación del display
 always_comb begin
   PAINT = 1'b0;

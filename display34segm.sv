@@ -9,7 +9,7 @@ module display34segm #(
     input  logic [10:0] VCOUNT,     // Vertical counter
     output logic PAINT              // Paint output
 );
-
+//.	
 // Local constants
 localparam logic [10:0] v_bar = (DL - 11'd5 * SG_WD) / 11'd4; // Vertical segment length
 localparam logic [10:0] h_bar = v_bar + SG_WD;        // Horizontal segment length

@@ -29,5 +29,5 @@ module imageROM1 #(
             paint = dataRom_sig[~(pix_x - POSX)];
         end
     end
-
+//.	
 endmodule
